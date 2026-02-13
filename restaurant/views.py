@@ -27,7 +27,7 @@ def book(request):
 # Add code for the bookings() view
 def Bookings(request):
     date = request.GET.get('date',datetime.today().date())
-    bookings = Bookings.objects.all()
+    bookings = Booking.objects.all()
     booking_json = serializers.serialize('json', bookings)
     return render(request, "bookings.html", {"bookings": booking_json})
 

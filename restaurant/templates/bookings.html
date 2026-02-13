@@ -34,10 +34,9 @@
 
 <!-- Add your code inside the script tags below  -->
 <script>
-  const bookings = JSON.parse('{{ bookings|safe }}');
-  console.log(bookings);
-
+  const bookings = JSON.parse('{{ bookings|escapejs }}');
   const pretty_json = JSON.stringify(bookings, null, 2);
+  document.getElementById('bookings').textContent = pretty_json;
 </script>
 
 {% endblock %}
